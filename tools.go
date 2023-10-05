@@ -5,6 +5,7 @@ import (
 	"math/rand"
 	"time"
 	"bufio"
+	"fmt"
 )
 
 func Clear() { // Efface l'affichage du terminal
@@ -43,4 +44,23 @@ func WordPicker(line_number_of_word int) string { // Fonction qui recherche le m
 		i++
 	}
 	return word
+}
+
+func hidden(word string) {
+	for i := 0; i < len(word); i++ {
+		hidden_word  = append(hidden_word , "_")
+	}
+	hidden_word  = Reveal(word)
+	fmt.Println(hidden_word )
+
+}
+
+func Reveal(word string) []string {
+	random := len(word)/2 - 1
+	for i := 0; i < random; i++ {
+		rand.Seed(time.Now().UnixNano())
+		randomNumber := rand.Intn(len(word) - 1)
+		hidden_word [randomNumber] = string(word[randomNumber])
+	}
+	return hidden_word 
 }

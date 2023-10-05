@@ -46,21 +46,9 @@ func WordPicker(line_number_of_word int) string { // Fonction qui recherche le m
 	return word
 }
 
-func hidden(word string) {
+func hidden(word string) { // Fonction qui compte le nombre de caractères dans le mot et qui les remplace par des underscore
 	for i := 0; i < len(word); i++ {
 		hidden_word = append(hidden_word , "_")
 	}
-	hidden_word = Reveal(word)
 	fmt.Println(hidden_word)
-
-}
-
-func Reveal(word string) []string {
-	random := len(word)/2 - 1
-	for i := 0; i < random; i++ {
-		rand.Seed(time.Now().UnixNano())
-		randomNumber := rand.Intn(len(word) - 1)
-		hidden_word [randomNumber] = string(word[randomNumber])
-	}
-	return hidden_word
 }

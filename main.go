@@ -1,7 +1,8 @@
 package main
 
+var hidden_word []string
+var used_letters []string
+
 func main() {
-	for i := 0; i < 10; i++ {
-		draw_hangman(i)
-	}
+	PrintHangmanAscii()
 }

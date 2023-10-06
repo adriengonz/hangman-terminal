@@ -42,7 +42,14 @@ func RunHangman(word string, try int) {
 			if try < 9 {
 				try++
 				fmt.Println("Il ne vous reste plus que", 10-try, "essais")
+			} else {
+				fmt.Println("Nombre d'essais insuffisant...")
+				fmt.Printf("Le mot était %v\n", word)
+				fmt.Println("Fermeture du jeu...")
+				Clear()
 			}
 		}
+		Clear()
+		fmt.Println(hidden_word)
 	}
 }

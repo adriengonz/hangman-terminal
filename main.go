@@ -15,7 +15,8 @@ func main() {
 	fmt.Println("La partie va bientôt commencer..")
 	time.Sleep(4 * time.Second)
 	Clear()
-	//tries := 0
+	tries := 0
 	originalWord := WordPicker(RandomNumber())
-	hidden(originalWord)
+	Hidden(originalWord)
+	RunHangman(originalWord, tries)
 }

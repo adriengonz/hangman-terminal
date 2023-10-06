@@ -46,7 +46,7 @@ func WordPicker(line_number_of_word int) string { // Fonction qui recherche le m
 	return word
 }
 
-func hidden(word string) { // Fonction qui compte le nombre de caractères dans le mot et qui les remplace par des underscore
+func Hidden(word string) { // Fonction qui compte le nombre de caractères dans le mot et qui les remplace par des underscore
 	for i := 0; i < len(word); i++ {
 		hidden_word = append(hidden_word , "_")
 	}

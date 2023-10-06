@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func RunHangman(word string, try int) {
@@ -43,10 +44,10 @@ func RunHangman(word string, try int) {
 				try++
 				fmt.Println("Il ne vous reste plus que", 10-try, "essais")
 			} else {
-				fmt.Println("Nombre d'essais insuffisant...")
-				fmt.Printf("Le mot était %v\n", word)
-				fmt.Println("Fermeture du jeu...")
-				Clear()
+				fmt.Println("Perdu ! Vous n'avez plus d'essais disponibles")
+				fmt.Println("Le mot était", word)
+				time.Sleep(3 * time.Second)
+				Exit()
 			}
 		}
 		Clear()

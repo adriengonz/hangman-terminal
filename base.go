@@ -6,6 +6,8 @@ import (
 )
 
 func RunHangman(word string, try int) {
+	presentInWord := false
+	wordNotRevealed := false
 	draw_hangman(try)
 	letter := ""
 	fmt.Println(letter)
@@ -25,7 +27,6 @@ func RunHangman(word string, try int) {
 		fmt.Println("Impossible, entrez une seule lettre.")
 		RunHangman(word, try)
 	} else {
-		presentInWord := false
 		for i := 0; i < len(word); i++ {
 			if letter == string(word[i]) {
 				presentInWord = true
@@ -39,7 +40,7 @@ func RunHangman(word string, try int) {
 				}
 			}
 		} else {
-			fmt.Printf("La lettre %v n'est pas dans le mot\n", letter)
+			fmt.Println("La lettre", letter, "n'est pas dans le mot")
 			if try < 9 {
 				try++
 				fmt.Println("Il ne vous reste plus que", 10-try, "essais")
@@ -52,5 +53,17 @@ func RunHangman(word string, try int) {
 		}
 		Clear()
 		fmt.Println(hidden_word)
+	}
+	for index, _ := range word {
+		if hidden_word[index] == "_" {
+			wordNotRevealed = true
+			RunHangman(word, try)
+			break
+		}
+	}
+	if wordNotRevealed == false {
+		fmt.Println("Felicitations ! Vous avez déviné !")
+		time.Sleep(3 * time.Second)
+		Exit()
 	}
 }

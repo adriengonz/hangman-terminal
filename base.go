@@ -18,6 +18,8 @@ func RunHangman(word string, try int) {
 	for _, char := range used_letters {
 		if letter == string(char) {
 			fmt.Println("Essayez autre chose, vous avez déjà essayé ceci !")
+			time.Sleep(1 * time.Second)
+			Clear()
 			RunHangman(word, try)
 		}
 	}
@@ -25,8 +27,10 @@ func RunHangman(word string, try int) {
 
 	if len(letter) < 1 || len(letter) > 1 {
 		fmt.Println("Impossible, entrez une seule lettre.")
+		time.Sleep(1 * time.Second)
 		RunHangman(word, try)
 	} else {
+		presentInWord = false
 		for i := 0; i < len(word); i++ {
 			if letter == string(word[i]) {
 				presentInWord = true
@@ -39,8 +43,10 @@ func RunHangman(word string, try int) {
 					hidden_word[index] = letter
 				}
 			}
+			time.Sleep(1 * time.Second)
 		} else {
 			fmt.Println("La lettre", letter, "n'est pas dans le mot")
+			time.Sleep(1 * time.Second)
 			if try < 9 {
 				try++
 				fmt.Println("Il ne vous reste plus que", 10-try, "essais")

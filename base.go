@@ -24,13 +24,13 @@ func RunHangman(word string, try int) {
 		fmt.Println("Impossible, entrez une seule lettre.")
 		RunHangman(word, try)
 	} else {
-		inWord := false
+		presentInWord := false
 		for i := 0; i < len(word); i++ {
 			if letter == string(word[i]) {
-				inWord = true
+				presentInWord = true
 			}
 		}
-		if inWord {
+		if presentInWord {
 			fmt.Println("La lettre", letter, "est dans le mot")
 			for index, char := range word {
 				if letter == string(char) {

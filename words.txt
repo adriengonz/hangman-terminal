@@ -6,9 +6,9 @@ Arbre
 Fleure
 Soleil
 Lune
-Étoile
+Etoile
 Mer
-Rivière
+Riviere
 Montagne
 Route
 Pont
@@ -18,8 +18,8 @@ Bateau
 Port
 Plage
 Sable
-Île
-Forêt
+Ile
+Foret
 Ville
 Pays
 Continent
@@ -45,7 +45,7 @@ Poisson
 Serpent
 Tigre
 Lion
-Éléphant
+Elephant
 Girafe
 Singe
 Renard
@@ -53,7 +53,7 @@ Loup
 Grenouille
 Papillon
 Abeille
-Araignée
+Araignee
 Fourmi
 Coccinelle
 Etoile
@@ -84,7 +84,7 @@ Ordinateur
 Musique
 Art
 Danse
-Théâtre
+Theatre
 Sport
 Football
 Basket

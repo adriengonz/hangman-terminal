@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func draw_hangman(nb_try int) {
+func draw_hangman(nb_try int) { // Fonction qui affiche le pendu selon l'essai en cours (sous forme de switch case)
 	switch nb_try {
 	case 0:
 		fmt.Printf("\n")
